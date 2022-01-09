@@ -47,6 +47,11 @@ namespace EvilEye.SDK
             if (PosData.Length > 0) { RaycastHit pos = PosData[0]; VRCPlayer.field_Internal_Static_VRCPlayer_0.transform.position = pos.point; }
         }
 
+        public static bool GetIsFriend(this APIUser Instance)
+        {
+            return Instance.isFriend || APIUser.IsFriendsWith(Instance.id) || APIUser.CurrentUser.friendIDs.Contains(Instance.id);
+        }
+
         public static string GetFramesColord(this Player player)
         {
             float fps = player.GetFrames();

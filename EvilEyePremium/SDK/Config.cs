@@ -129,7 +129,9 @@ namespace EvilEye.SDK
                         }
                         catch
                         {
+#pragma warning disable CS0618 // Type or member is obsolete
                             MelonLoader.MelonLogger.Msg(ConsoleColor.Red, "[Config] [Error] colors not saved as nummbers");
+#pragma warning restore CS0618 // Type or member is obsolete
                             return defaultVal;
                         }
 
@@ -140,7 +142,9 @@ namespace EvilEye.SDK
             else
             {
                 File.AppendAllText("EvilEye/Config.ini", $"\n{key}={defaultVal.r},{defaultVal.g},{defaultVal.b},{defaultVal.a}");
+#pragma warning disable CS0618 // Type or member is obsolete
                 MelonLoader.MelonLogger.Msg($"[Config] created color {key}");
+#pragma warning restore CS0618 // Type or member is obsolete
                 return defaultVal;
             }
         }

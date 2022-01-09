@@ -78,16 +78,18 @@ namespace EvilEye.Module.Render
                         if (player.GetIsMaster())
                             info += "<color=white>[<color=yellow>H</color>]";
                         if (player.IsBot())
-                            info += " [<color=black>B</color>]";
+                            info += " [<color=#FFC0CB>Bot</color>]";
+                        if (player.field_Private_APIUser_0.GetIsFriend())
+                            info += " [<color=#FF69B4>Friend</color>] ";
                         info += " [" + player.GetPlatform() + "]";
-                        info += " [<color=#FFB300>P</color>] " + player.GetPingColord();
-                        info += " [<color=#FFB300>F</color>] " + player.GetFramesColord();
+                        info += " | <color=#FFB300>Ping:</color> " + player.GetPingColord();
+                        info += " <color=#FFB300>Frames:</color> " + player.GetFramesColord() + " |  ";
                         info += " <color=#" + ColorUtility.ToHtmlStringRGB(player.GetTrustColor()) + ">" + player.GetAPIUser().displayName + "</color></color>\n";
                     }
                     playerList.text.text = info;
                 }
                 catch { }
-                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(0.5f);
             }
             yield break;
         }

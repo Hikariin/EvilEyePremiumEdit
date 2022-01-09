@@ -15,7 +15,7 @@ namespace EvilEye.Module.Settings
         public override void OnEnable()
         {
             Process.Start("vrchat.exe", Environment.CommandLine.ToString());
-            Main.OnApplicationQuit();
+            Process.GetCurrentProcess().Kill();
         }
     }
 }

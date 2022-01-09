@@ -15,6 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
+using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using EvilEye.SDK.PhotonSDK;
@@ -27,7 +28,7 @@ using EvilEye.Module.Spoofer;
 
 namespace EvilEye
 {
-    public class Main
+    public class Main : MelonMod
     {
         public static Main Instance;
         public Config config = new Config();
@@ -82,7 +83,7 @@ namespace EvilEye
         public OnSceneLoadedEvent[] onSceneLoadedEventArray = new OnSceneLoadedEvent[0];
         public OnWorldInitEvent[] onWorldInitEventArray = new OnWorldInitEvent[0];
 
-        public static void OnApplicationStart()
+        public override void OnApplicationStart()
         {
             Main.Instance = new Main();
             ClassInjector.RegisterTypeInIl2Cpp<CustomNameplate>();
@@ -94,7 +95,7 @@ namespace EvilEye
             });
         }
 
-        public static void OnUpdate()
+        public override void OnUpdate()
         {
             if (Input.GetKey(KeyCode.LeftControl))
             {
@@ -106,7 +107,7 @@ namespace EvilEye
                         OnApplicationQuit();
                     }
                 }
-                if(Input.GetKeyDown(KeyCode.T))
+                if(Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     PlayerWrapper.Tele2MousePos();
                     LoggerUtill.Log("[OnKeyPress.Alt + T] Damn i broke my back lifting you, good god lose some weight!", ConsoleColor.DarkMagenta);
@@ -117,7 +118,7 @@ namespace EvilEye
                 Main.Instance.onUpdateEventArray[i].OnUpdateEvent();
         }
 
-        public static void OnSceneWasLoaded(int buildIndex, string sceneName)
+        public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
             for(int i = 0;  i < Main.Instance.onSceneLoadedEventArray.Length; i++)
                 Main.Instance.onSceneLoadedEventArray[i].OnSceneWasLoadedEvent(buildIndex, sceneName);   
@@ -137,7 +138,6 @@ namespace EvilEye
             QMNestedButton spoofersButton = new QMNestedButton(mainTab.menuTransform, "Spoofers");
             QMNestedButton safetyButton = new QMNestedButton(mainTab.menuTransform, "Safety");
             QMNestedButton rendererButton = new QMNestedButton(mainTab.menuTransform, "Renderer");
-            QMNestedButton botButton = new QMNestedButton(mainTab.menuTransform, "Bot");
             QMNestedButton settingsButton = new QMNestedButton(mainTab.menuTransform, "Settings");
 
             Main.Instance.movementGroup = new QMButtonGroup(movementButton.menuTransform, "Movement");
@@ -285,12 +285,12 @@ namespace EvilEye
 
 
 
-        public static void OnGUI()
+        public override void OnGUI()
         {
 
         }
 
-        public static void OnApplicationQuit()
+        public override void OnApplicationQuit()
         {
             foreach (BaseModule module in Main.Instance.modules)
             {
