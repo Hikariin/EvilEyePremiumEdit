@@ -24,6 +24,7 @@ namespace EvilEye.SDK
         public static ApiWorld CurrentWorld() => RoomManager.field_Internal_Static_ApiWorld_0;
         public static ApiWorldInstance CurrentWorldInstance() => RoomManager.field_Internal_Static_ApiWorldInstance_0;
 
+
         public static void Init()
         {
             vrc_Pickups = UnityEngine.Object.FindObjectsOfType<VRC_Pickup>();

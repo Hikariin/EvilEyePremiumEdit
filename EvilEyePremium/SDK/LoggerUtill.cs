@@ -16,19 +16,19 @@ namespace EvilEye.SDK
 
         public static void DisplayLogo()
         {
-            Console.Title = "EvilEye";
+            Console.Title = "EvilGay";
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("=============================================================================================================");
-            Console.WriteLine("                                                                                                             ");           
-            Console.WriteLine("                          ███████╗██╗░░░██╗██╗██╗░░░░░  ███████╗██╗░░░██╗███████╗                            ");
-            Console.WriteLine("                          ██╔════╝██║░░░██║██║██║░░░░░  ██╔════╝╚██╗░██╔╝██╔════╝                            ");
-            Console.WriteLine("                          █████╗░░╚██╗░██╔╝██║██║░░░░░  █████╗░░░╚████╔╝░█████╗░░                            ");
-            Console.WriteLine("                          ██╔══╝░░░╚████╔╝░██║██║░░░░░  ██╔══╝░░░░╚██╔╝░░██╔══╝░░                            ");
-            Console.WriteLine("                          ███████╗░░╚██╔╝░░██║███████╗  ███████╗░░░██║░░░███████╗                            ");
-            Console.WriteLine("                          ╚══════╝░░░╚═╝░░░╚═╝╚══════╝  ╚══════╝░░░╚═╝░░░╚══════╝                            ");
-            Console.WriteLine("                                 Beta Release By Four_DJ, Literal, and Fish.                                 ");                               
-            Console.WriteLine("=============================================================================================================");
+            Console.WriteLine("===========================================================================================================");
+            Console.WriteLine("                                                                                                           ");           
+            Console.WriteLine("                         ███████╗██╗░░░██╗██╗██╗░░░░░  ░██████╗░░█████╗░██╗░░░██╗                         ");
+            Console.WriteLine("                         ██╔════╝██║░░░██║██║██║░░░░░  ██╔════╝░██╔══██╗╚██╗░██╔╝                         ");
+            Console.WriteLine("                         █████╗░░╚██╗░██╔╝██║██║░░░░░  ██║░░██╗░███████║░╚████╔╝░                         ");
+            Console.WriteLine("                         ██╔══╝░░░╚████╔╝░██║██║░░░░░  ██║░░╚██╗██╔══██║░░╚██╔╝░░                         ");
+            Console.WriteLine("                         ███████╗░░╚██╔╝░░██║███████╗  ╚██████╔╝██║░░██║░░░██║░░░                         ");
+            Console.WriteLine("                         ╚══════╝░░░╚═╝░░░╚═╝╚══════╝  ░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░                         ");
+            Console.WriteLine("                            Beta Release By Four_DJ, Literal, Fish, and Hikariin                            ");                               
+            Console.WriteLine("============================================================================================================");
             Console.ForegroundColor = ConsoleColor.White;
         }
 
@@ -62,7 +62,7 @@ namespace EvilEye.SDK
         {
             Console.Write("[");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("EvilEye");
+            Console.Write("EvilGay");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("] "); 
             Console.Write("[");
