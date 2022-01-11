@@ -72,7 +72,7 @@ namespace EvilEye
             try
             {
                 Instance.Patch(typeof(VRC.UI.Elements.QuickMenu).GetMethod("Awake"), new HarmonyMethod(AccessTools.Method(typeof(Main), nameof(Main.OnUIInit))));
-
+          
                 LoggerUtill.Log("[Patch] UI", ConsoleColor.Green);
             }
             catch (Exception ex)
